@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Leandro</title>
+    
+    <style>
+        *{
+            background-color: rgb(109, 228, 172);
+            text-align: center;
+
+         }
+        body{
+            padding: 50px;
+            
+            
+        
+        }
+        #num1, #num2{
+            border-radius: 10px;
+            box-shadow: 0.1em 0.1em 0.2em rgb(56, 34, 34) ;
+
+        }
+        #variavel{
+            
+            text-align:center;
+            height: 35px;
+            width: 35px;
+            border-radius:70%;
+            font-size: 20px;
+            box-shadow: 0.1em 0.5em 0.5em rgb(56, 34, 34) ;
+
+        }
+        #botao{
+            color: blanchedalmond;
+            background-color: rgb(141, 141, 161);
+            border-radius: 15px;
+            box-shadow: 0.2em 0.6em 0.7em rgb(56, 34, 34) ;
+        }
+
+    
+    </style>
+
+</head>
+
+
+
+
+
+
+
+<body>
+    <div id="intro">
+        <p>Selecione qualquer operação basica e digite o seu valor</p>
+    </div>
+    <input type="number" id ="num1" >
+    <select type="text" id ="variavel" >
+        
+            <option id="mais" value="+">+</option>
+            <option id= "menos" value="-">-</option>
+            <option id = "vezes" value="x">x</option>
+            <option id = "dividido" value="/">/</option>
+    </select>
+    <input type="number" id ="num2">
+    <button id="botao">Resultado</button>
+    <p>o valor da sua operação é:<div id="ResultadoFinal"></div></p>
+
+
+
+    
+    <script>
+        let op = window.document.getElementById("variavel")
+        let campo1 = window.document.getElementById("num1")
+        let campo2 = window.document.getElementById("num2")
+        document.addEventListener("click", operacao)
+
+
+    function operacao(){
+    
+        let res = document.getElementById("ResultadoFinal")
+        let num1= Number(campo1.value)
+        let num2= Number(campo2.value)
+        let valor= op.value
+
+         if (valor == "+") {
+           let resultado = num1 + num2
+            res.innerHTML=`${resultado}`
+         }else if(valor == "-"){
+            let resultado = num1 - num2
+            res.innerHTML=`${resultado}`  
+         }else if(valor == "/"){
+             let resultado = num1 / num2
+             res.innerHTML=`${resultado}`
+         }else if(valor == "x"){
+            let resultado = num1 * num2
+            res.innerHTML=`${resultado}`
+         }
+         
+
+    }
+
+    </script>
+    
+</body>
+</html>
